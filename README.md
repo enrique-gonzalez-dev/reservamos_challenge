@@ -9,18 +9,19 @@ REST API which can be consumed by a client app to check the weather forecast for
 * Rails version: '~> 6.0.6', '>= 6.0.6.1'
 
 * Configuration
+
 Install:
 
-    ``bundle install``
+    bundle install
   
 Run:
 
-    ``rails s``
+    bundle exec rails s
 
 Rails running in localhost:3000
 
 * Test suite
 Run:
 
-    ``rspec``
+    rspec
 
