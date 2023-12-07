@@ -1,0 +1,88 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+
+AllCops:
+  TargetRubyVersion: 2.6
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  NewCops: enable
+  Exclude:
+    - db/schema.rb
+    - db/migrate/*
+    - 'vendor/**/*'
+Rails:
+  Enabled: true
+
+Rails/UnknownEnv:
+  Environments:
+    - production
+    - development
+    - test
+    - staging
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: true
+  CountComments: false
+  Max: 100
+  ExcludedMethods:
+    - 'describe'
+    - 'context'
+  Exclude:
+    - '**/*.gemspec'
+
+Metrics/MethodLength:
+  Enabled: true
+  CountComments: false
+  Max: 25
+  ExcludedMethods:
+    - 'resolve'
+  Exclude:
+    - '**/*.gemspec'
+    - 'spec/**/*.rb'
+
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+Naming/AccessorMethodName:
+  Enabled: false
+Layout/LineLength:
+  Enabled: true
+  Max: 120
+  IgnoredPatterns: [ "^ *# "]
+  Exclude:
+    - db/migrate/*
+    - db/schema.rb
+    - config/**/*
+Metrics/AbcSize:
+  Enabled: false
+Style/EvalWithLocation:
+  Enabled: false
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: false
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: false
+Lint/RaiseException:
+  Enabled: false
+Lint/StructNewOverride:
+  Enabled: false
+Style/ExponentialNotation:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: false
+Style/HashTransformKeys:
+  Enabled: false
+Style/HashTransformValues:
+  Enabled: false
+Style/SlicingWithRange:
+  Enabled: false
+Style/RescueModifier:
+   Enabled: true
+   Exclude:
+     - 'spec/**/*.rb'
